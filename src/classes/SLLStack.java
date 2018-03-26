@@ -16,17 +16,18 @@ public class SLLStack<E> implements Stack<E>
 	
 	public E pop() {
 		if (isEmpty())
-			return null; 
-		
-		// ADD CODE TO COMPLETE IMPLEMENTATION
-		
+			return null;
+		SNode<E> ntr = top;
+		top = top.getNext();
+		size--;
+		E etr = ntr.getElement();
 		ntr.clean(); 
-		
 		return etr;
 	}
 
 	public void push(E e) {
-		// ADD CODE TO COMPLETE IMPLEMENTATION
+		top = new SNode<>(e,top);
+		size++;
 		
 	}
 
