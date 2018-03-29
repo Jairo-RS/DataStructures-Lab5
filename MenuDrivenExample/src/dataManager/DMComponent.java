@@ -22,7 +22,21 @@ public class DMComponent {
 	public DMComponent() { 
 		lol = new ArrayList<NamedList>(); 
 		mStack = new Stack<Menu>(); 
-	} 
+	}
+	
+	/**
+	 * Removes a list from the system
+	 * @param name the name of the list
+	 */
+	public  void removeList (String name)
+	{
+		int index = getIndexForList(name);
+		if (index == -1)
+			IOComponent.getComponent().output("Name is not recorded in system " + name + ".\n");
+		else {
+			lol.remove(index);
+		}
+	}
 	
 	/**
 	 * Adds a new list to the system
